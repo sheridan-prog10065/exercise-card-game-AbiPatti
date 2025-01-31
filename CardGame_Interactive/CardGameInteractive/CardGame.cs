@@ -17,5 +17,16 @@
         // The card that was last played by house
         private Card _houseCard;
 
+        /// <summary>
+        /// The constructor of the CardGame class
+        /// </summary>
+        public CardGame()
+        {
+            _cardDeck = new CardDeck();
+            _score = new Score();
+            _playerCard = null;
+            _houseCard = null;
+        }
+
     }
 }
