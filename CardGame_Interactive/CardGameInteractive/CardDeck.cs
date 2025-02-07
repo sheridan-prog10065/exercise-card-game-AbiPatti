@@ -15,5 +15,10 @@
         {
             _cardList = new List<Card>();
         }
+
+        public int CardCount
+        {
+            get { return _cardList.Count; }
+        }
     }
 }
