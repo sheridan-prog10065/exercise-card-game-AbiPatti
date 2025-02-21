@@ -92,8 +92,27 @@ public class CardGame
     /// </returns>
     private sbyte PlayRound()
     {
-        //TODO: Implement this method
-        return 0;
+        // Determine the card ranks for both the house and the player
+        byte houseRank = DetermineCardRank(_houseCard);
+        byte playerRank = DetermineCardRank(_playerCard);
+
+        // Check which card has a higher rank to determine the winner
+        if (playerRank > houseRank)
+        {
+            // The player has a higher rank
+            return 1;
+        }
+        else if (playerRank < houseRank)
+        {
+            // The player has a lower rank
+            return -1;
+        }
+        else
+        {
+            // There was a tie
+            return 0;
+        }
+
     }
 
     /// <summary>
@@ -118,6 +137,7 @@ public class CardGame
     /// <returns> A byte that is the rank of the card</returns>
     private byte DetermineCardRank(Card card)
     {
+        // Determine if card is an ace
         return (byte)((card.Value == 1) ? 14 : card.Value);
     }
 
