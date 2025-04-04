@@ -99,4 +99,9 @@ public class CardDeck
 
     }
 
+    public void ExchangeCards(ref Card cardOne, ref Card cardTwo)
+    {
+        // Swap the cards using tuple deconstruction
+        (cardOne, cardTwo) = (cardTwo, cardOne);
+    }
 }

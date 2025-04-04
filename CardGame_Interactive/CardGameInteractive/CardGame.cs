@@ -133,6 +133,8 @@ public class CardGame
     /// </summary>
     public void SwitchCards()
     {
+        // Ask the card deck to swap the player's card with the house's card
+        _cardDeck.ExchangeCards(ref _playerCard, ref _houseCard);
 
     }
 
