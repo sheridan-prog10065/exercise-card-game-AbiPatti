@@ -1,4 +1,6 @@
-﻿namespace CardGameInteractive;
+﻿using System.Diagnostics;
+
+namespace CardGameInteractive;
 
 /// <summary>
 /// Defines the card game that implements the game logic and holds the card deck
@@ -117,11 +119,13 @@ public class CardGame
     }
 
     /// <summary>
-    /// Method to deal cards to the player and house when a new house starts
+    /// Method to deal cards to the player and house when a new game starts
     /// </summary>
     public void DealCards()
     {
-
+        // Extract two cards, assign one to player and one to house
+        bool cardsDealt = _cardDeck.GetPairOfCards(out _playerCard, out _houseCard);
+        Debug.Assert(cardsDealt, "Cards could not be dealt. Check if game is over");
     }
 
     /// <summary>

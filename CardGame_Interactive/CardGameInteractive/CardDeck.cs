@@ -62,6 +62,38 @@ public class CardDeck
         }
     }
 
+    /// <summary>
+    /// Extracts two random cards from the list of cards
+    /// </summary>
+    /// <param name="cardOne">First card output</param>
+    /// <param name="cardTwo">Second card output</param>
+    /// <returns>True if the extraction was possible</returns>
+    public bool GetPairOfCards(out Card cardOne, out Card cardTwo)
+    {
+        // Check if there are enough cards
+        if (_cardList.Count >= 2)
+        {
+            // Extract the first card
+            int randomPosition = s_randomizer.Next(0, _cardList.Count);
+            cardOne = _cardList[randomPosition];
+            _cardList.RemoveAt(randomPosition);
+
+            // Extract the second card
+            randomPosition = s_randomizer.Next(0, _cardList.Count);
+            cardTwo = _cardList[randomPosition];
+
+            // Return true
+            return true;
+        }
+        else
+        {
+            // The extraction was not succesful
+            cardOne = null;
+            cardTwo = null;
+            return false;
+        }
+    }
+
     public void PrintCards()
     {
 
