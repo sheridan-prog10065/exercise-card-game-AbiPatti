@@ -90,7 +90,7 @@ public class CardGame
     ///      0: There was a tie
     ///     -1: The house won the round
     /// </returns>
-    private sbyte PlayRound()
+    public sbyte PlayRound()
     {
         // Determine the card ranks for both the house and the player
         byte houseRank = DetermineCardRank(_houseCard);
@@ -118,7 +118,7 @@ public class CardGame
     /// <summary>
     /// Method to deal cards to the player and house when a new house starts
     /// </summary>
-    private void DealCards()
+    public void DealCards()
     {
 
     }
@@ -126,7 +126,7 @@ public class CardGame
     /// <summary>
     /// Method to switch player's cards with the house 
     /// </summary>
-    private void SwitchCards()
+    public void SwitchCards()
     {
 
     }
